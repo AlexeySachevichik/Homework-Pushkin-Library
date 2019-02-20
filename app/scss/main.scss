@@ -1,16 +1,209 @@
 @import "reset";
 @import "fonts";
 
-body {
-	background: #777777;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+/* ACENT */
+$ac_01: #0055ab;
+$ac_02: #003367;
 
-	h1 {
-		font-size: 50px;
-		font-weight: 700;
-		text-transform: uppercase;
-		color: #ffffff;
-	}
+/* BACKGROUND */
+$bg_01: #cdcfd1;
+$bg_02: #ffffff;
+$bg_03: #f2f1f1;
+$bg_04: #e6e5e5;
+$bg_05: #000000;
+
+/* FONTS */
+$ft_01: #222222;
+$ft_02: #ffffff;
+$ft_03: #3c3c3c;
+
+/* BORDERS */
+$br_01: #d8d6d6;
+$br_02: #d4cebb;
+
+
+
+/* VIRABLE */
+$shadow_01: 0 0 5px 1px rgba(0,0,0,.5);
+$animation: 0.2s;
+
+body {
+    position: relative;
+    font-family: "OpenSanss", "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    background: $bg_02;
+    color: $ft_01;
+}
+
+.wrapper {
+    max-width: 2570px;
+    min-width: 360px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.content {
+    max-width: 1190px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+
+    .h-wrapper {
+        position: relative;
+        box-shadow: $shadow_01;
+        background: $ac_01;
+        padding-top: 3px;
+
+        .nav-bar {
+            padding-top: 7px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid $br_02;
+            background: $bg_01;
+            box-shadow: $shadow_01;
+
+            .content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .nb-visl,
+            .nb-mail {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+
+                .p {
+                    font-size: 15px;
+                    color: $ft_01;
+                    text-decoration: none;
+                }
+
+                svg {
+                    display: block;
+                    width: 22px;
+                    height: 22px;
+                    margin-right: 5px;
+
+                    path {
+                        fill: $ac_01;
+                    }
+                }
+
+                &:hover .p {
+                    text-decoration: underline;
+                }
+            }
+
+            .nb-mail {
+                svg {
+                    width: 19px;
+                    height: 19px;
+                }
+            }
+
+            .nb-social-group {
+                display: flex;
+                align-items: center;
+
+                .nbsg-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    border: 1px solid $ac_01;
+                    margin-right: 7px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    svg {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+
+                        path {
+                            fill: $ac_01;
+                        }
+                    }
+
+                    &.yt {
+                        svg {
+                            width: 80%;
+                            height: 80%;
+                        }
+                    }
+                }
+            }
+
+            .nb-login-group {
+                display: flex;
+                align-items: center;
+
+                .nblg-item {
+                    text-decoration: none;
+                    font-size: 15px;
+                    color: $ft_01;
+                    &:hover { text-decoration: underline; }
+                }
+
+                .nblg-separator {
+                    margin: 0 15px;
+                    width: 1px;
+                    height: 12px;
+                    background: $ft_01;
+                }
+            }
+
+            .nb-search {
+                width: 240px;
+                padding: 7px;
+                padding-right: 35px;
+                border: 1px solid $ac_01;
+                background: $bg_02;
+            }
+        }
+
+        menu {
+            margin-top: 12px;
+            padding-bottom: 9px;
+
+            nav {
+                display: flex;
+                align-items: center;
+
+                a {
+                    font-size: 17px;
+                    color: $ft_02;
+                    text-decoration: none;
+                    &:hover { text-decoration: underline; }
+                }
+
+                .mb-separator {
+                    margin: 0 22px;
+                    width: 2px;
+                    height: 12px;
+                    background: $ft_02;
+                }
+            }
+        }
+    }
+}
+
+main {
+    margin-top: 90px;
 }
