@@ -12,10 +12,10 @@ var gulpUglify     = require('gulp-uglify');          // Минификация 
 
 
 const paths = {
-    app:  'app/',
-    scss: 'app/scss/',
-    css:  'app/css/',
-    js:   'app/js/',
+    app:  'docs/',
+    scss: 'docs/scss/',
+    css:  'docs/css/',
+    js:   'docs/js/',
 };
 
 var clean = function(){
