@@ -53,12 +53,6 @@ body {
 }
 
 header {
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*width: 100%;*/
-/*    left: 0;
-    right: 0;*/
-    /*height: 90px;*/
 
     .h-wrapper {
         position: relative;
@@ -338,8 +332,8 @@ main {
     .banner {
         display: flex;
         align-items: center;
-        justify-content: center;
         flex-direction: column;
+        padding-top: 340px;
         height: 700px;
         background: url(../img/back.jpg) center top no-repeat;
         background-size: cover;
@@ -355,6 +349,25 @@ main {
 
             b {
                 font-weight: 900;
+            }
+        }
+
+        img {
+            width: 287px;
+            height: 82px;
+            margin-top: 130px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $ft_02;
+
+            a {
+                color: $ft_02;
             }
         }
     }
