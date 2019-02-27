@@ -301,6 +301,7 @@ header {
             }
 
             .menu-button {
+                display: none;
                 width: 28px;
                 height: 17px;
                 margin-right: 20px;
@@ -464,8 +465,10 @@ main {
             }
 
             .item {
-                max-width: 360px;
-                padding: 0 15px 7px 15px;
+                position: relative;
+                /*max-width: 360px;*/
+                width: 31%;
+                padding: 0 15px 20px 15px;
                 border: 1px solid $br_03;
                 background: $bg_02;
                 border-radius: 5px;
@@ -485,7 +488,10 @@ main {
 
                 .ai-image {
                     width: 100%;
-                    height: 240px;
+
+                    img {
+                        width: 100%;
+                    }
                 }
 
                 .ai-descr {
@@ -495,6 +501,10 @@ main {
                 }
 
                 .ai-addit {
+                    position: absolute;
+                    bottom: 7px;
+                    left: 15px;
+                    right: 15px;
                     display: flex;
                     justify-content: space-between;
 
@@ -644,6 +654,11 @@ main {
             background-size: cover;
         }
     }
+
+    .map {
+        width: 100%;
+        height: 445px;
+    }
 }
 
 footer {
@@ -684,3 +699,5 @@ footer {
         text-transform: uppercase;
     }
 }
+
+@import "media";
