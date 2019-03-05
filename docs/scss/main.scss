@@ -29,6 +29,7 @@ $shadow_01: 0 0 5px 1px rgba(0,0,0,.5);
 $shadow_02: 0 0 5px 1px rgba(0,0,0,.1);
 $shadow_03: 0 3px 5px 1px rgba(0,0,0,.1);
 $shadow_04: 0 4px 4px 0 rgba(0,0,0,.05);
+$shadow_05: 0 0 40px rgba(0,0,0,1);
 $animation: 0.2s;
 
 
@@ -372,6 +373,7 @@ main {
             font-weight: 700;
             line-height: 1.3;
             transform: scaleY(1.1);
+            text-shadow: $shadow_05;
 
             b {
                 font-weight: 900;
@@ -391,6 +393,7 @@ main {
             font-weight: 700;
             text-transform: uppercase;
             color: $ft_02;
+            text-shadow: $shadow_05;
 
             a {
                 color: $ft_02;
@@ -527,23 +530,25 @@ main {
     .newbook {
         background: $bg_02;
 
-        .title {
-            padding: 25px;
-        }
+        .title { padding: 25px; }
 
         .link {
             padding: 40px;
-
             a { font-size: 18px; }
         }
 
         .wrapper-books {
-            display: flex;
-            justify-content: space-between;
-
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            
             .wb-item {
-                width: 140px;
-                height: 220px;
+                padding: 0 10px;
+            }
+
+            img {
+                display: block;
+                max-height: 100%;
+                max-width: 100%;
             }
         }
     }
@@ -561,39 +566,39 @@ main {
         }
 
         .wrapper-magazine {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
             .wm-item {
-                width: 160px;
-                height: 210px;
+                padding: 0 10px;
+            }
+
+            img {
+                display: block;
+                max-height: 100%;
+                max-width: 100%;
             }
         }
     }
 
     .services {
         background: $bg_04;
-        padding-bottom: 50px;
 
         .title {
             padding: 25px 0;
         }
 
         .s-wrapper {
-            padding: 0 30px;
-
-            .row {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 50px;
-                &:last-child { margin-bottom: 0; }
-            }
-
-            .col-3 {
-                width: 25%;
-            }
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
 
             .s-item {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 45px;
+            }
+
+            .si-body {
                 width: 215px;
                 height: 215px;
                 padding-top: 30px;
@@ -659,6 +664,23 @@ main {
         width: 100%;
         height: 445px;
     }
+
+    .partner {
+        .wrapper-partner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 40px 0;
+
+            .wp-item {
+                margin-right: 20px;
+                &:last-child { margin-right: 0; }
+
+                a, img { display: block; }
+            }
+        }
+    }
 }
 
 footer {
@@ -682,6 +704,8 @@ footer {
             color: $ft_02;
             text-decoration: none;
             transition: $animation;
+
+            &:last-child { margin-right: 0; }
             
             &:hover {
                 color: $ft_02 - 20;

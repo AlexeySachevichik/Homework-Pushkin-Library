@@ -442,7 +442,8 @@ main {
       line-height: 1.3;
       -webkit-transform: scaleY(1.1);
           -ms-transform: scaleY(1.1);
-              transform: scaleY(1.1); }
+              transform: scaleY(1.1);
+      text-shadow: 0 0 40px black; }
       main .banner h1 b {
         font-weight: 900; }
     main .banner img {
@@ -455,7 +456,8 @@ main {
       font-size: 18px;
       font-weight: 700;
       text-transform: uppercase;
-      color: #ffffff; }
+      color: #ffffff;
+      text-shadow: 0 0 40px black; }
       main .banner p a {
         color: #ffffff; }
   main .afisha {
@@ -580,17 +582,14 @@ main {
       main .newbook .link a {
         font-size: 18px; }
     main .newbook .wrapper-books {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: justify;
-      -webkit-justify-content: space-between;
-          -ms-flex-pack: justify;
-              justify-content: space-between; }
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; }
       main .newbook .wrapper-books .wb-item {
-        width: 140px;
-        height: 220px; }
+        padding: 0 10px; }
+      main .newbook .wrapper-books img {
+        display: block;
+        max-height: 100%;
+        max-width: 100%; }
   main .magazine {
     background: #f2f2f2; }
     main .magazine .title {
@@ -600,39 +599,32 @@ main {
       main .magazine .link a {
         font-size: 14px; }
     main .magazine .wrapper-magazine {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: justify;
-      -webkit-justify-content: space-between;
-          -ms-flex-pack: justify;
-              justify-content: space-between; }
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; }
       main .magazine .wrapper-magazine .wm-item {
-        width: 160px;
-        height: 210px; }
+        padding: 0 10px; }
+      main .magazine .wrapper-magazine img {
+        display: block;
+        max-height: 100%;
+        max-width: 100%; }
   main .services {
-    background: #e6e5e5;
-    padding-bottom: 50px; }
+    background: #e6e5e5; }
     main .services .title {
       padding: 25px 0; }
     main .services .s-wrapper {
-      padding: 0 30px; }
-      main .services .s-wrapper .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr; }
+      main .services .s-wrapper .s-item {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
-        margin-bottom: 50px; }
-        main .services .s-wrapper .row:last-child {
-          margin-bottom: 0; }
-      main .services .s-wrapper .col-3 {
-        width: 25%; }
-      main .services .s-wrapper .s-item {
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        margin-bottom: 45px; }
+      main .services .s-wrapper .si-body {
         width: 215px;
         height: 215px;
         padding-top: 30px;
@@ -644,10 +636,10 @@ main {
         -webkit-box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.1);
                 box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.1);
         text-align: center; }
-        main .services .s-wrapper .s-item img {
+        main .services .s-wrapper .si-body img {
           display: inline-block;
           height: 90px; }
-        main .services .s-wrapper .s-item p {
+        main .services .s-wrapper .si-body p {
           color: #0055ab;
           font-size: 15px; }
   main .history {
@@ -681,6 +673,29 @@ main {
   main .map {
     width: 100%;
     height: 445px; }
+  main .partner .wrapper-partner {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    padding: 40px 0; }
+    main .partner .wrapper-partner .wp-item {
+      margin-right: 20px; }
+      main .partner .wrapper-partner .wp-item:last-child {
+        margin-right: 0; }
+      main .partner .wrapper-partner .wp-item a, main .partner .wrapper-partner .wp-item img {
+        display: block; }
 
 footer nav,
 footer .copyright {
@@ -715,6 +730,8 @@ footer nav {
     -webkit-transition: 0.2s;
     -o-transition: 0.2s;
     transition: 0.2s; }
+    footer nav a:last-child {
+      margin-right: 0; }
     footer nav a:hover {
       color: #ebebeb;
       /*text-decoration: underline;*/ }
@@ -729,7 +746,51 @@ footer .copyright {
 
 @media (max-width: 1180px) {
   header .h-wrapper menu nav .mb-separator {
-    margin: 0 10px; } }
+    margin: 0 10px; }
+  main .banner {
+    padding-top: 300px;
+    padding-left: 10px;
+    padding-right: 10px; }
+  main .newbook .wrapper-books {
+    grid-template-columns: 1fr 1fr 1fr 1fr; }
+    main .newbook .wrapper-books .wb-item {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      margin-bottom: 20px; }
+  main .newbook .link {
+    padding-top: 20px; }
+  main .magazine .wrapper-magazine {
+    grid-template-columns: 1fr 1fr 1fr 1fr; }
+    main .magazine .wrapper-magazine .wm-item {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      margin-bottom: 20px; }
+  main .magazine .link {
+    padding-top: 10px; }
+  main .partner .wrapper-partner {
+    padding-bottom: 20px; }
+    main .partner .wrapper-partner .wp-item {
+      margin-bottom: 20px; } }
 
 @media (max-width: 992px) {
   header .h-wrapper menu {
@@ -737,7 +798,7 @@ footer .copyright {
     header .h-wrapper menu .menu-button {
       display: block; }
     header .h-wrapper menu nav {
-      display: block;
+      display: none;
       z-index: 999;
       position: absolute;
       top: 100%;
@@ -763,5 +824,31 @@ footer .copyright {
       margin-bottom: 10px; }
       main .afisha .wrapper-items .item:last-child {
         margin-bottom: 0; }
+      main .afisha .wrapper-items .item .ai-descr {
+        font-size: 18px; }
+  main .services .s-wrapper {
+    grid-template-columns: 1fr 1fr; }
   footer nav {
     display: none; } }
+
+@media (max-width: 768px) {
+  main .banner {
+    padding-top: 250px; }
+  main .newbook .wrapper-books {
+    grid-template-columns: 1fr 1fr 1fr; }
+  main .magazine .wrapper-magazine {
+    grid-template-columns: 1fr 1fr 1fr; } }
+
+@media (max-width: 615px) {
+  main .banner {
+    padding-top: 200px; }
+  main .newbook .wrapper-books {
+    grid-template-columns: 1fr 1fr; }
+  main .magazine .wrapper-magazine {
+    grid-template-columns: 1fr 1fr; } }
+
+@media (max-width: 460px) {
+  main .banner {
+    padding-top: 90px; }
+  main .services .s-wrapper {
+    grid-template-columns: 1fr; } }

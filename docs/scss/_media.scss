@@ -10,9 +10,51 @@ header {
       }
     }
   }
-}   
+}
 
-
+main {
+  .banner {
+    padding-top: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .newbook {
+    .wrapper-books {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      .wb-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+    }
+    .link {
+      padding-top: 20px;
+    }
+  }
+  .magazine {
+    .wrapper-magazine {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      .wm-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+    }
+    .link {
+      padding-top: 10px;
+    }
+  }
+  .partner {
+    .wrapper-partner {
+      padding-bottom: 20px;
+      .wp-item {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
 }
 
 @media (max-width: 992px){
@@ -27,7 +69,7 @@ header {
       }
 
       nav{
-        display: block;
+        display: none;
         z-index: 999;
         position: absolute;
         top: 100%;
@@ -64,7 +106,15 @@ main {
         width: 100%;
         margin-bottom: 10px;
         &:last-child { margin-bottom: 0; }
+        .ai-descr {
+          font-size: 18px;
+        }
       }
+    }
+  }
+  .services {
+    .s-wrapper {
+      grid-template-columns: 1fr 1fr;
     }
   }
 }
@@ -80,8 +130,55 @@ footer {
 
 @media (max-width: 768px) {
 
+main {
+  .banner {
+    padding-top: 250px;
+  }
+  .newbook {
+    .wrapper-books {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  .magazine {
+    .wrapper-magazine {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }
 
-@media (max-width: 576px){
+}
+
+@media (max-width: 615px){
+
+main {
+  .banner {
+    padding-top: 200px;
+  }
+  .newbook {
+    .wrapper-books {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .magazine {
+    .wrapper-magazine {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+}
+
+@media (max-width: 460px){
+
+main {
+  .banner {
+    padding-top: 90px;
+  }
+  .services {
+    .s-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+}
 
 }
