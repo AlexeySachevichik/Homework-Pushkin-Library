@@ -325,7 +325,7 @@ header {
                 }
             }
 
-            nav {
+            #menu {
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
@@ -645,10 +645,12 @@ main {
                 }
             }
 
-            a.hd-link {
+            .hd-link {
                 display: block;
                 text-align: right;
-                color: $ac_01;
+                a {
+                   color: $ac_01; 
+                }
             }
         }
 

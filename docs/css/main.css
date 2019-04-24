@@ -315,6 +315,11 @@ header .h-wrapper {
           -o-transition: 0.2s;
           transition: 0.2s;
           color: #cdcfd1; }
+        header .h-wrapper .nav-bar .nb-search-group .nbsg-input::-moz-placeholder {
+          -webkit-transition: 0.2s;
+          -o-transition: 0.2s;
+          transition: 0.2s;
+          color: #cdcfd1; }
         header .h-wrapper .nav-bar .nb-search-group .nbsg-input:-ms-input-placeholder {
           -webkit-transition: 0.2s;
           -o-transition: 0.2s;
@@ -331,6 +336,8 @@ header .h-wrapper {
           transition: 0.2s;
           color: #cdcfd1; }
         header .h-wrapper .nav-bar .nb-search-group .nbsg-input:focus::-webkit-input-placeholder {
+          color: transparent; }
+        header .h-wrapper .nav-bar .nb-search-group .nbsg-input:focus::-moz-placeholder {
           color: transparent; }
         header .h-wrapper .nav-bar .nb-search-group .nbsg-input:focus:-ms-input-placeholder {
           color: transparent; }
@@ -385,7 +392,7 @@ header .h-wrapper {
           margin-bottom: 0; }
       header .h-wrapper menu .menu-button:hover .mb-line {
         background: #ebebeb; }
-    header .h-wrapper menu nav {
+    header .h-wrapper menu #menu {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -397,17 +404,17 @@ header .h-wrapper {
       -webkit-flex-wrap: wrap;
           -ms-flex-wrap: wrap;
               flex-wrap: wrap; }
-      header .h-wrapper menu nav a {
+      header .h-wrapper menu #menu a {
         font-size: 17px;
         color: #ffffff;
         text-decoration: none;
         -webkit-transition: 0.2s;
         -o-transition: 0.2s;
         transition: 0.2s; }
-        header .h-wrapper menu nav a:hover {
+        header .h-wrapper menu #menu a:hover {
           color: #ebebeb;
           /*text-decoration: underline;*/ }
-      header .h-wrapper menu nav .mb-separator {
+      header .h-wrapper menu #menu .mb-separator {
         margin: 0 22px;
         width: 2px;
         height: 12px;
@@ -660,10 +667,11 @@ main {
         margin-bottom: 15px; }
         main .history .h-descr .hd-content p:last-child {
           margin-bottom: 5px; }
-      main .history .h-descr a.hd-link {
+      main .history .h-descr .hd-link {
         display: block;
-        text-align: right;
-        color: #0055ab; }
+        text-align: right; }
+        main .history .h-descr .hd-link a {
+          color: #0055ab; }
     main .history .h-image {
       padding-left: 15px;
       width: 50%;
@@ -747,6 +755,8 @@ footer .copyright {
 @media (max-width: 1180px) {
   header .h-wrapper menu nav .mb-separator {
     margin: 0 10px; }
+  header .h-wrapper .nav-bar .nb-social-group {
+    display: none; }
   main .banner {
     padding-top: 300px;
     padding-left: 10px;
@@ -797,24 +807,35 @@ footer .copyright {
     position: relative; }
     header .h-wrapper menu .menu-button {
       display: block; }
-    header .h-wrapper menu nav {
+    header .h-wrapper menu #menu {
       display: none;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
       z-index: 999;
       position: absolute;
       top: 100%;
       left: 0;
       right: 0;
       background: #ffffff; }
-      header .h-wrapper menu nav a {
+      header .h-wrapper menu #menu a {
+        display: block;
+        width: 100%;
         font-size: 18px;
         display: block;
         color: #003367;
         padding: 10px 15px;
         border-bottom: 1px solid #e6e5e5; }
-        header .h-wrapper menu nav a:hover {
+        header .h-wrapper menu #menu a:hover {
           color: #001f53; }
-      header .h-wrapper menu nav .mb-separator {
+      header .h-wrapper menu #menu .mb-separator {
         display: none; }
+  header .h-wrapper .nav-bar .nb-language-group {
+    display: none; }
+  header .h-wrapper .nav-bar .nb-login-group {
+    display: none; }
   main .afisha .wrapper-items {
     padding: 0; }
     main .afisha .wrapper-items .wi-navigation {
@@ -828,10 +849,28 @@ footer .copyright {
         font-size: 18px; }
   main .services .s-wrapper {
     grid-template-columns: 1fr 1fr; }
+  main .history {
+    padding-bottom: 0; }
+    main .history .content {
+      padding: 0;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      main .history .content .h-descr {
+        width: 100%;
+        padding: 0 10px; }
+      main .history .content .h-image {
+        width: 100%;
+        height: 400px;
+        margin-top: 30px; }
   footer nav {
     display: none; } }
 
 @media (max-width: 768px) {
+  header .h-wrapper .nav-bar .nb-visl {
+    display: none; }
   main .banner {
     padding-top: 250px; }
   main .newbook .wrapper-books {
@@ -840,6 +879,8 @@ footer .copyright {
     grid-template-columns: 1fr 1fr 1fr; } }
 
 @media (max-width: 615px) {
+  header .h-wrapper .nav-bar .nb-search-group {
+    display: none; }
   main .banner {
     padding-top: 200px; }
   main .newbook .wrapper-books {
@@ -848,6 +889,8 @@ footer .copyright {
     grid-template-columns: 1fr 1fr; } }
 
 @media (max-width: 460px) {
+  header .h-wrapper .nav-bar {
+    display: none; }
   main .banner {
     padding-top: 90px; }
   main .services .s-wrapper {
