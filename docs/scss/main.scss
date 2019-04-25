@@ -48,6 +48,7 @@ body {
     min-width: 360px;
     width: 100%;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .content {
@@ -79,6 +80,11 @@ section {
 }
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 777;
 
     .h-wrapper {
         position: relative;
@@ -304,25 +310,16 @@ header {
             .menu-button {
                 display: none;
                 width: 28px;
-                height: 17px;
+                height: 24px;
                 margin-right: 20px;
                 cursor: pointer;
-
-                .mb-line {
-                    width: 100%;
-                    height: 3px;
-                    background: $bg_02;
-                    margin-bottom: 4px;
-                    transition: $animation;
-
-                    &:last-child { margin-bottom: 0; }
-                }
+                background: url('../img/menu.svg') center center no-repeat;
+                background-size: contain;
 
                 &:hover {
-                    .mb-line {
-                        background: $bg_02 - 20;
-                    }
+                    box-shadow: 0 0 4px rgba(0,0,0,0.3);
                 }
+
             }
 
             #menu {
@@ -337,8 +334,7 @@ header {
                     transition: $animation;
 
                     &:hover {
-                        color: $ft_02 - 20;
-                        /*text-decoration: underline;*/
+                        color: #ccc;
                     }
                 }
 
@@ -354,6 +350,7 @@ header {
 }
 
 main {
+    margin-top: 48px;
     background: $bg_02;
 
     .banner {
@@ -361,7 +358,7 @@ main {
         align-items: center;
         flex-direction: column;
         padding-top: 340px;
-        height: 700px;
+        height: 720px;
         background: url(../img/back.jpg) center top no-repeat;
         /*background-size: cover;*/
         
@@ -539,16 +536,27 @@ main {
 
         .wrapper-books {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: repeat(6, 1fr);
             
             .wb-item {
-                padding: 0 10px;
-            }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                .wbi-book {
+                    cursor: pointer;
+                    transition-duration: 0.2s;
 
-            img {
-                display: block;
-                max-height: 100%;
-                max-width: 100%;
+                    &:hover {
+                        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+                    }
+
+                    img {
+                        display: block;
+                        max-height: 100%;
+                        max-width: 100%;
+                    }
+                }
             }
         }
     }
@@ -567,17 +575,28 @@ main {
 
         .wrapper-magazine {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: repeat(6, 1fr);
 
             .wm-item {
-                padding: 0 10px;
-            }
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
-            img {
-                display: block;
-                max-height: 100%;
-                max-width: 100%;
-            }
+                .wmi-magazine {
+                    cursor: pointer;
+                    transition-duration: 0.2s;
+
+                    &:hover {
+                        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+                    }
+
+                    img {
+                        display: block;
+                        max-height: 100%;
+                        max-width: 100%;
+                    }
+                }
+            }          
         }
     }
 
@@ -596,6 +615,7 @@ main {
                 display: flex;
                 justify-content: center;
                 margin-bottom: 45px;
+                cursor: default;
             }
 
             .si-body {
@@ -608,6 +628,11 @@ main {
                 border: 3px solid $ac_01;
                 box-shadow: $shadow_03;
                 text-align: center;
+                transition-duration: 0.2s;
+
+                &:hover {
+                    box-shadow: 0 3px 5px 2px rgba(0,0,0,.4);
+                }
 
                 img {
                     display: inline-block;
@@ -723,6 +748,79 @@ footer {
         color: $ft_02;
         text-align: center;
         text-transform: uppercase;
+    }
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+
+    .p-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        max-width: 700px;
+        min-width: 360px;
+        background: #ffffff;
+        padding: 2rem;
+
+         .p-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            background: url(../img/cancel.svg) center center no-repeat;
+            background-size: contain;
+            cursor: pointer;
+        }
+
+        .image {
+            width: 40%;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            padding-left: 2rem;
+            width: 60%;
+            
+            p.title {
+                height: auto;
+                text-align: center;
+                font-weight: 600;
+                font-size: 18px;
+                margin-bottom: 2rem;
+                color: $ac_02;
+            }
+
+            p {
+                text-align: justify;
+                height: 100%;
+                font-size: 15px;
+                line-height: 1.4;
+            }
+
+            a {
+                font-size: 18px;
+                text-align: center;
+                color: $ac_02;
+                font-weight: 600;
+            }
+        }
     }
 }
 

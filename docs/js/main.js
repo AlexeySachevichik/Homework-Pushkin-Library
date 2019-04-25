@@ -20,3 +20,37 @@ document.addEventListener('click', function(e){
 		menu.style.display = 'none';
 	}
 });
+
+var books = document.getElementsByClassName('wbi-book');
+var magaz = document.getElementsByClassName('wmi-magazine');
+
+for(var i=0; i<books.length; i++){
+	books[i].addEventListener('click', function(e){
+		var key = e.target.parentNode.getAttribute('data-key');
+		var popup = document.getElementById(key);
+		popup.style.display = 'flex';
+	});
+};
+
+for(var i=0; i<magaz.length; i++){
+	magaz[i].addEventListener('click', function(e){
+		var key = e.target.parentNode.getAttribute('data-key');
+		var popup = document.getElementById(key);
+		popup.style.display = 'flex';
+	});
+}
+
+var popup = document.getElementsByClassName('popup');
+var pClose = document.getElementsByClassName('p-close');
+
+function hideAllPopup(arr){
+	for (var i=0; i<arr.length; i++) {
+		arr[i].style.display = 'none';
+	}
+}
+
+for(var i=0; i<pClose.length; i++){
+	pClose[i].addEventListener('click', function(e){
+		hideAllPopup(popup);
+	});
+};
